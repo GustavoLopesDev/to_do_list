@@ -122,9 +122,9 @@ const filterTodos = (filterValue) => {
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const inputValue = todoInput.value;
+  const inputValue = todoInput.value.trim(); // <<< .trim() remove espaços
 
-  if (inputValue) {
+  if (inputValue !== "") {
     saveTodo(inputValue);
   }
 });
